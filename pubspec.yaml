@@ -19,9 +19,9 @@ dev_dependencies:
   flutter_lints: ^2.0.3
 
 # Riverpod 2.3.10+ uses @mustBeOverridden (meta ^1.9.0), which conflicts with Flutter SDK's meta 1.8.0
-# in some build environments. Pin to riverpod 2.3.8 which works with meta 1.8.x.
+# in some build environments. Pin to riverpod 2.3.7 (2.3.8/2.3.9 not available on pub.dev).
 dependency_overrides:
-  riverpod: 2.3.8
+  riverpod: 2.3.7
 
 flutter:
   uses-material-design: true
