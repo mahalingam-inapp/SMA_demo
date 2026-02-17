@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:riverpod/riverpod.dart';
 
 import '../providers/energy_provider.dart';
 import '../ui/layouts/app_layout.dart';
@@ -31,7 +32,7 @@ import '../ui/screens/settings_screen.dart';
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
 final _shellNavigatorKey = GlobalKey<NavigatorState>();
 
-GoRouter createAppRouter(WidgetRef ref) {
+GoRouter createAppRouter(Ref ref) {
   return GoRouter(
     navigatorKey: _rootNavigatorKey,
     initialLocation: '/',
@@ -74,19 +75,19 @@ GoRouter createAppRouter(WidgetRef ref) {
         routes: [
           GoRoute(
             path: '/dashboard',
-            pageBuilder: (_, state) => const NoTransitionPage(child: DashboardScreen()),
+            pageBuilder: (_, state) => NoTransitionPage(child: const DashboardScreen()),
           ),
           GoRoute(
             path: '/history',
-            pageBuilder: (_, state) => const NoTransitionPage(child: HistoryScreen()),
+            pageBuilder: (_, state) => NoTransitionPage(child: const HistoryScreen()),
           ),
           GoRoute(
             path: '/devices',
-            pageBuilder: (_, state) => const NoTransitionPage(child: DevicesScreen()),
+            pageBuilder: (_, state) => NoTransitionPage(child: const DevicesScreen()),
           ),
           GoRoute(
             path: '/alerts',
-            pageBuilder: (_, state) => const NoTransitionPage(child: AlertsScreen()),
+            pageBuilder: (_, state) => NoTransitionPage(child: const AlertsScreen()),
           ),
         ],
       ),
@@ -172,6 +173,12 @@ final goRouterProvider = Provider<GoRouter>((ref) {
 });
 
 class NoTransitionPage extends CustomTransitionPage<void> {
-  const NoTransitionPage({required super.child})
-      : super(transitionsBuilder: (_, __, ___, child) => child);
+  NoTransitionPage({required Widget child})
+      : super(
+          child: child,
+          transitionsBuilder: (BuildContext context, Animation<double> animation,
+              Animation<double> secondaryAnimation, Widget child) {
+            return child;
+          },
+        );
 }

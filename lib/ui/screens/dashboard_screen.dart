@@ -112,10 +112,10 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
                           show: true,
                           bottomTitles: AxisTitles(sideTitles: SideTitles(showTitles: true, getTitlesWidget: (v, meta) => Text(_historyData[v.toInt()]['day'] as String, style: const TextStyle(fontSize: 11, color: AppColors.textSecondary)))),
                           leftTitles: AxisTitles(sideTitles: SideTitles(showTitles: true, reservedSize: 28, getTitlesWidget: (v, meta) => Text('${v.toInt()}', style: const TextStyle(fontSize: 10, color: AppColors.textSecondary)))),
-                          topTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
-                          rightTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                          topTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                          rightTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
                         ),
-                        gridData: const FlGridData(show: true, drawVerticalLine: false),
+                        gridData: FlGridData(show: true, drawVerticalLine: false),
                         borderData: FlBorderData(show: false),
                         barGroups: [
                           for (int i = 0; i < _historyData.length; i++)
@@ -128,7 +128,6 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
                             ),
                         ],
                       ),
-                      duration: const Duration(milliseconds: 150),
                     ),
                   ),
                   const SizedBox(height: 24),

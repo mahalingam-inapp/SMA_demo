@@ -33,7 +33,7 @@ class AlertDetailsScreen extends ConsumerWidget {
       backgroundColor: AppColors.background,
       appBar: AppBar(
         leading: IconButton(icon: const Icon(Icons.arrow_back_ios), onPressed: () => context.pop()),
-        title: Text(alertItem!.title, style: const TextStyle(color: AppColors.textPrimary, fontWeight: FontWeight.w600)),
+        title: Text(alertItem.title, style: const TextStyle(color: AppColors.textPrimary, fontWeight: FontWeight.w600)),
         backgroundColor: AppColors.surface,
       ),
       body: ListView(

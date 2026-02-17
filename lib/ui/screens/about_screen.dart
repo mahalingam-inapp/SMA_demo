@@ -16,10 +16,10 @@ class AboutScreen extends ConsumerWidget {
         title: const Text('About', style: TextStyle(color: AppColors.textPrimary, fontWeight: FontWeight.w600)),
         backgroundColor: AppColors.surface,
       ),
-      body: const Center(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          children: const [
             Text('SMA', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: AppColors.primary)),
             SizedBox(height: 8),
             Text('SMA Energy App', style: TextStyle(color: AppColors.textSecondary)),
