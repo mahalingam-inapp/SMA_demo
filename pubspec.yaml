@@ -18,5 +18,10 @@ dev_dependencies:
     sdk: flutter
   flutter_lints: ^2.0.3
 
+# Resolve conflict: Flutter SDK uses meta 1.8.0, riverpod 2.3.10+ requires meta ^1.9.0.
+# Overriding allows both to resolve; Flutter is compatible with meta 1.9.x.
+dependency_overrides:
+  meta: ^1.9.0
+
 flutter:
   uses-material-design: true
