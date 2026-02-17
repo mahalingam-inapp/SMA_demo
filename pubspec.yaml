@@ -9,8 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  meta: ^1.9.0
-  flutter_riverpod: 2.4.10
+  flutter_riverpod: 2.3.6
   go_router: 12.0.3
   fl_chart: 0.62.0
 
@@ -19,10 +18,10 @@ dev_dependencies:
     sdk: flutter
   flutter_lints: ^2.0.3
 
-# Resolve conflict: Flutter SDK uses meta 1.8.0, riverpod 2.3.10+ requires meta ^1.9.0.
-# Overriding allows both to resolve; Flutter is compatible with meta 1.9.x.
+# Riverpod 2.3.10+ uses @mustBeOverridden (meta ^1.9.0), which conflicts with Flutter SDK's meta 1.8.0
+# in some build environments. Pin to riverpod 2.3.8 which works with meta 1.8.x.
 dependency_overrides:
-  meta: ^1.9.0
+  riverpod: 2.3.8
 
 flutter:
   uses-material-design: true
