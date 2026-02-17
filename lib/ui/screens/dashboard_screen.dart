@@ -193,7 +193,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
       decoration: BoxDecoration(
         gradient: LinearGradient(begin: Alignment.topLeft, end: Alignment.bottomRight, colors: gradient),
         borderRadius: BorderRadius.circular(12),
-        boxShadow: [BoxShadow(color: gradient[0].withValues(alpha: 0.4), blurRadius: 8, offset: const Offset(0, 4))],
+        boxShadow: [BoxShadow(color: gradient[0].withOpacity(0.4), blurRadius: 8, offset: const Offset(0, 4))],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -201,7 +201,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
         children: [
           Icon(icon, color: Colors.white, size: 32),
           Text(value, style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.white)),
-          Text(label, style: TextStyle(fontSize: 12, color: Colors.white.withValues(alpha: 0.9))),
+          Text(label, style: TextStyle(fontSize: 12, color: Colors.white.withOpacity(0.9))),
         ],
       ),
     );
@@ -213,7 +213,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
       decoration: BoxDecoration(
         color: AppColors.surface,
         borderRadius: BorderRadius.circular(12),
-        boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.06), blurRadius: 8, offset: const Offset(0, 2))],
+        boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.06), blurRadius: 8, offset: const Offset(0, 2))],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -285,7 +285,7 @@ class _SiteSelectorSheet extends StatelessWidget {
             ...sites.map((site) => Padding(
                   padding: const EdgeInsets.only(bottom: 8),
                   child: Material(
-                    color: currentSite.id == site.id ? AppColors.primary.withValues(alpha: 0.1) : null,
+                    color: currentSite.id == site.id ? AppColors.primary.withOpacity(0.1) : null,
                     borderRadius: BorderRadius.circular(12),
                     child: InkWell(
                       onTap: () => onSelect(site.id),
@@ -307,7 +307,7 @@ class _SiteSelectorSheet extends StatelessWidget {
                                 Container(
                                   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                                   decoration: BoxDecoration(
-                                    color: site.status == SiteStatus.active ? AppColors.success.withValues(alpha: 0.15) : AppColors.textMuted.withValues(alpha: 0.2),
+                                    color: site.status == SiteStatus.active ? AppColors.success.withOpacity(0.15) : AppColors.textMuted.withOpacity(0.2),
                                     borderRadius: BorderRadius.circular(6),
                                   ),
                                   child: Text(site.status.name, style: TextStyle(fontSize: 11, color: site.status == SiteStatus.active ? AppColors.success : AppColors.textSecondary)),
