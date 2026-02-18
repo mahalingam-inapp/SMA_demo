@@ -9,7 +9,10 @@ import '../ui/screens/about_screen.dart';
 import '../ui/screens/alert_details_screen.dart';
 import '../ui/screens/alerts_screen.dart';
 import '../ui/screens/dashboard_screen.dart';
+import '../ui/screens/contact_support_screen.dart';
 import '../ui/screens/device_details_screen.dart';
+import '../ui/screens/device_firmware_screen.dart';
+import '../ui/screens/device_statistics_screen.dart';
 import '../ui/screens/devices_screen.dart';
 import '../ui/screens/energy_flow_screen.dart';
 import '../ui/screens/forecast_screen.dart';
@@ -48,6 +51,7 @@ GoRouter createAppRouter(Ref ref) {
           loc.startsWith('/history') ||
           loc.startsWith('/devices') ||
           loc.startsWith('/alerts') ||
+          loc.startsWith('/support') ||
           loc.startsWith('/energy-flow') ||
           loc.startsWith('/forecast') ||
           loc.startsWith('/programs') ||
@@ -105,6 +109,24 @@ GoRouter createAppRouter(Ref ref) {
           final id = state.pathParameters['id']!;
           return DeviceDetailsScreen(deviceId: id);
         },
+      ),
+      GoRoute(
+        path: '/devices/:id/statistics',
+        builder: (context, state) {
+          final id = state.pathParameters['id']!;
+          return DeviceStatisticsScreen(deviceId: id);
+        },
+      ),
+      GoRoute(
+        path: '/devices/:id/firmware',
+        builder: (context, state) {
+          final id = state.pathParameters['id']!;
+          return DeviceFirmwareScreen(deviceId: id);
+        },
+      ),
+      GoRoute(
+        path: '/support',
+        builder: (_, __) => const ContactSupportScreen(),
       ),
       GoRoute(
         path: '/alerts/:id',
