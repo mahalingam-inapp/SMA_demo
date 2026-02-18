@@ -84,13 +84,14 @@ class _HEMSConfigScreenState extends ConsumerState<HEMSConfigScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Expanded(
+                        Expanded(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
                             children: [
-                              Text('Grid Charging', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500, color: AppColors.textPrimary)),
-                              SizedBox(height: 2),
-                              Text('Allow battery to charge from grid', style: TextStyle(fontSize: 12, color: AppColors.textSecondary)),
+                              const Text('Grid Charging', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500, color: AppColors.textPrimary)),
+                              const SizedBox(height: 2),
+                              const Text('Allow battery to charge from grid', style: TextStyle(fontSize: 12, color: AppColors.textSecondary)),
                             ],
                           ),
                         ),

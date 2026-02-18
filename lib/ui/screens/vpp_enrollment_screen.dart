@@ -166,15 +166,16 @@ class _VPPEnrollmentScreenState extends ConsumerState<VPPEnrollmentScreen> {
                             color: AppColors.backgroundBottom,
                             borderRadius: BorderRadius.circular(8),
                           ),
-                          child: const Column(
+                          child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
                             children: [
-                              Text('How it works:', style: TextStyle(fontWeight: FontWeight.w600, color: AppColors.textPrimary)),
-                              SizedBox(height: 8),
-                              Text('• We\'ll notify you of upcoming VPP events', style: TextStyle(fontSize: 13, color: AppColors.textSecondary)),
-                              Text('• Your battery will automatically discharge during events', style: TextStyle(fontSize: 13, color: AppColors.textSecondary)),
-                              Text('• You earn rewards based on energy contributed', style: TextStyle(fontSize: 13, color: AppColors.textSecondary)),
-                              Text('• Opt out anytime with no penalties', style: TextStyle(fontSize: 13, color: AppColors.textSecondary)),
+                              const Text('How it works:', style: TextStyle(fontWeight: FontWeight.w600, color: AppColors.textPrimary)),
+                              const SizedBox(height: 8),
+                              const Text('• We\'ll notify you of upcoming VPP events', style: TextStyle(fontSize: 13, color: AppColors.textSecondary)),
+                              const Text('• Your battery will automatically discharge during events', style: TextStyle(fontSize: 13, color: AppColors.textSecondary)),
+                              const Text('• You earn rewards based on energy contributed', style: TextStyle(fontSize: 13, color: AppColors.textSecondary)),
+                              const Text('• Opt out anytime with no penalties', style: TextStyle(fontSize: 13, color: AppColors.textSecondary)),
                             ],
                           ),
                         ),
